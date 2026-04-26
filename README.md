@@ -1,72 +1,67 @@
-# Claude Code スターターパック
+# Claude Code Starter Pack
 
-Render推奨のMCP・プラグインを**1コマンドで一括セットアップ**するパッケージ。
+Render推奨のMCP・プラグインを3コマンドでまとめてセットアップするウィザード。
 
-非エンジニアでも「これを貼るだけで全部入る」を目指して設計しました。
-
----
-
-## インストール — Windows
-
-PowerShell を開いて、以下を貼り付けて Enter：
-
-```powershell
-irm https://raw.githubusercontent.com/AoiKugayama/claude-code-starter/main/install.ps1 | iex
-```
-
-> PowerShell は スタートメニュー → 「powershell」と検索 → 起動
+非エンジニアでもターミナル（PowerShell / Terminal）にコマンドを貼り付けるだけで完了する。
 
 ---
 
-## インストール — Mac
+## インストール方法
 
-ターミナルを開いて、以下を貼り付けて Enter：
+### Step 1: マーケットプレイスを追加
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AoiKugayama/claude-code-starter/main/install.sh | bash
+claude plugin marketplace add AoiKugayama/claude-code-starter
 ```
 
-> ターミナルは Finder → アプリケーション → ユーティリティ → ターミナル.app
+### Step 2: プラグインをインストール
+
+```bash
+claude plugin install setup@claude-code-starter
+```
+
+### Step 3: セットアップウィザードを起動
+
+Claude Code を開いて以下を入力：
+
+```
+/cc-setup
+```
+
+対話式で MCP・プラグインを順番にセットアップしてくれる。
 
 ---
 
-## インストール後
+## セットアップ内容
 
-1. **Claude Code を再起動**する
-2. チャットに `/cc-setup` と入力 → 設定状況を確認
+### 無料 MCP（APIキー不要）
 
----
-
-## インストールされるもの
-
-### MCP サーバー（無料・自動）
-| ツール | 機能 |
-|---|---|
-| Context7 | ライブラリの最新ドキュメントをAIが直接参照 |
+| MCP | 機能 |
+|-----|------|
+| Context7 | ライブラリ最新ドキュメント参照 |
 | Memory | 会話をまたぐ永続メモリ |
-| Linear | タスク管理ツールとの連携 |
-| TaskMaster AI | AIによるタスク自動分解 |
+| Linear | タスク管理連携 |
+| TaskMaster AI | AI タスク自動分解 |
 
-### MCP サーバー（APIキー要・対話式）
-スクリプト実行中にAPIキーを聞かれます。持っていなければ Enter でスキップ可。
+### APIキーが必要な MCP
 
-| ツール | 機能 | APIキー取得先 |
-|---|---|---|
-| Exa | 意味理解型Web検索 | [exa.ai](https://exa.ai)（無料枠あり） |
-| Firecrawl | Webスクレイピング | [firecrawl.dev](https://firecrawl.dev)（無料枠あり） |
+| MCP | 機能 | 取得先 |
+|-----|------|--------|
+| Exa | 意味理解型 Web 検索 | https://exa.ai（無料） |
+| Firecrawl | Web スクレイピング | https://firecrawl.dev（無料） |
 
-### プラグイン（settings.json に自動登録）
-`setup@cc-starter` — `/cc-setup` スキルを提供するセットアップウィザード
+### プラグイン（無料）
+
+`github` / `playwright` / `superpowers` / `security-guidance` / `atomic-agents` / `claude-code-setup` / `skill-creator` / `plugin-dev` / `claude-md-management` / `Notion` / `company`
 
 ---
 
 ## 詳しいガイド
 
-各ツールの機能・活用シーン・特徴 →
-**https://render-portal.pages.dev/claude-code-tools.html**
+各ツールの説明・使い方 → https://render-portal.pages.dev/claude-code-tools.html
 
 ---
 
-## 作成者
+## 作者
 
-[AoiKugayama / Render](https://github.com/AoiKugayama)
+[AoiKugayama](https://github.com/AoiKugayama) / Render
