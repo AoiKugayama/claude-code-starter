@@ -1,0 +1,5 @@
+{
+  "name": "Claude Code Starter Pack",
+  "description": "Render推奨のMCP・プラグインを一括インストールするセットアップウィザード",
+  "plugins": ["setup"]
+}
