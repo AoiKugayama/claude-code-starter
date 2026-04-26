@@ -1,5 +1,24 @@
 {
-  "name": "Claude Code Starter Pack",
-  "description": "Render推奨のMCP・プラグインを一括インストールするセットアップウィザード",
-  "plugins": ["setup"]
+  "name": "claude-code-starter",
+  "owner": {
+    "name": "AoiKugayama"
+  },
+  "metadata": {
+    "description": "Render推奨のMCP・プラグインを対話式で一括セットアップするウィザード"
+  },
+  "plugins": [
+    {
+      "name": "setup",
+      "source": "./setup",
+      "description": "推奨MCP・プラグインを対話式で一括セットアップするウィザード。/cc-setup で起動。",
+      "version": "1.0.0",
+      "author": {
+        "name": "AoiKugayama"
+      },
+      "repository": "https://github.com/AoiKugayama/claude-code-starter",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["setup", "mcp", "productivity", "starter", "claude-code"]
+    }
+  ]
 }
