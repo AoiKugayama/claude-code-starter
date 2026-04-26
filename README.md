@@ -1,29 +1,45 @@
 # Claude Code スターターパック
 
-Render推奨のMCP・プラグインを**3コマンドで一括セットアップ**するパッケージ。
+Render推奨のMCP・プラグインを**1コマンドで一括セットアップ**するパッケージ。
 
-非エンジニアでも「これを実行すれば全部入る」を目指して設計しました。
+非エンジニアでも「これを貼るだけで全部入る」を目指して設計しました。
 
 ---
 
-## インストール手順
+## インストール — Windows
 
-```bash
-# 1. このマーケットプレイスを追加
-claude plugins add marketplace cc-starter github:AoiKugayama/claude-code-starter
+PowerShell を開いて、以下を貼り付けて Enter：
 
-# 2. セットアップウィザードをインストール
-claude plugin install setup@cc-starter
-
-# 3. ウィザードを起動（Claude Codeのチャットで入力）
-/cc-setup
+```powershell
+irm https://raw.githubusercontent.com/AoiKugayama/claude-code-starter/main/install.ps1 | iex
 ```
 
+> PowerShell は スタートメニュー → 「powershell」と検索 → 起動
+
 ---
 
-## このパッケージで入るもの
+## インストール — Mac
 
-### MCP サーバー（無料）
+ターミナルを開いて、以下を貼り付けて Enter：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/AoiKugayama/claude-code-starter/main/install.sh | bash
+```
+
+> ターミナルは Finder → アプリケーション → ユーティリティ → ターミナル.app
+
+---
+
+## インストール後
+
+1. **Claude Code を再起動**する
+2. チャットに `/cc-setup` と入力 → 設定状況を確認
+
+---
+
+## インストールされるもの
+
+### MCP サーバー（無料・自動）
 | ツール | 機能 |
 |---|---|
 | Context7 | ライブラリの最新ドキュメントをAIが直接参照 |
@@ -31,14 +47,16 @@ claude plugin install setup@cc-starter
 | Linear | タスク管理ツールとの連携 |
 | TaskMaster AI | AIによるタスク自動分解 |
 
-### MCP サーバー（APIキー要）
+### MCP サーバー（APIキー要・対話式）
+スクリプト実行中にAPIキーを聞かれます。持っていなければ Enter でスキップ可。
+
 | ツール | 機能 | APIキー取得先 |
 |---|---|---|
 | Exa | 意味理解型Web検索 | [exa.ai](https://exa.ai)（無料枠あり） |
 | Firecrawl | Webスクレイピング | [firecrawl.dev](https://firecrawl.dev)（無料枠あり） |
 
-### プラグイン（公式・無料）
-`github` / `playwright` / `superpowers` / `security-guidance` / `atomic-agents` / `claude-code-setup` / `skill-creator` / `plugin-dev` / `claude-md-management` / `Notion` / `company(cc-company)`
+### プラグイン（settings.json に自動登録）
+`setup@cc-starter` — `/cc-setup` スキルを提供するセットアップウィザード
 
 ---
 
